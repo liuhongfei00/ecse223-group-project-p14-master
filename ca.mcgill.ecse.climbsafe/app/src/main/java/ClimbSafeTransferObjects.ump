@@ -1,0 +1,50 @@
+namespace ca.mcgill.ecse.climbsafe.controller;
+
+class TOAssignment {
+  memberEmail;
+  memberName;
+  guideEmail;
+  guideName;
+  hotelName;
+  String authCode;
+  Integer startWeek;
+  Integer endWeek;
+  Integer totalCostForGuide;
+  Integer totalCostForEquipment;
+}
+class TOEquipment{
+	name;
+	Integer weight;
+	Integer price;
+}
+class TOMember{
+	name;
+	password;
+	email;
+	emergencyContact;
+	Integer refundPercent;
+	String[] equip;
+	String[] equipQuant;
+	Integer nrWeeks;
+	Boolean hotelReq;
+	Boolean guideReq;	
+}
+
+
+class TOEquipmentBundle {
+   name;
+   int discount;
+}
+
+class TOBundleItem {
+  Integer quantity;
+  String equipment;
+  * -- 1 TOEquipmentBundle bundle;
+  
+}
+class TOGuide {
+	name;
+	email;
+	password;
+	emergContact; 
+}

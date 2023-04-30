@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.climbsafe.javafx.fxml.controllers.GuidePageController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffc7" height="452.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000b5" height="41.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#cacc90" height="320.0" layoutX="1.0" layoutY="81.0" opacity="0.19" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 40; -fx-arc-width: 40;" width="435.0" />
+      <GridPane id="addHotel" layoutY="82.0" prefHeight="249.0" prefWidth="429.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="208.3333740234375" minWidth="10.0" prefWidth="122.3333740234375" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.6666259765625" minWidth="10.0" prefWidth="306.6666259765625" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="108.79999389648438" minHeight="10.0" prefHeight="59.999989827473954" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="83.33334350585936" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="60.666646321614564" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="58.66668701171875" minHeight="10.0" prefHeight="58.66668701171875" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="NameGField" GridPane.columnIndex="1">
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding></TextField>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="72.0" style="-fx-background-color: #F8B16F#F8B16F #F8B16F#F8B16F; -fx-background-radius: 30;" text="Name: " textAlignment="RIGHT" GridPane.halignment="CENTER">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emergContact" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="52.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding></TextField>
+            <Label alignment="CENTER" prefHeight="42.0" prefWidth="75.0" style="-fx-background-color: #F8B16F#F8B16F #F8B16F#F8B16F; -fx-background-radius: 30;" text="Email:" textAlignment="RIGHT" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="42.0" prefWidth="75.0" style="-fx-background-color: #F8B16F#F8B16F #F8B16F#F8B16F; -fx-background-radius: 30;" text="Password:" textAlignment="RIGHT" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PasswordGField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding></TextField>
+            <Label alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="77.0" style="-fx-background-color: #F8B16F#F8B16F #F8B16F#F8B16F; -fx-background-radius: 30;" text="Emergency Contact:" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <TextField fx:id="EmailGField" prefHeight="14.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding></TextField>
+         </children>
+      </GridPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f26419" height="32.0" layoutX="1.0" layoutY="50.0" stroke="#ea9a44" strokeType="INSIDE" width="598.0" />
+      <VBox fx:id="guideDisplay" alignment="CENTER" layoutX="436.0" layoutY="111.0" opacity="0.46" prefHeight="263.0" prefWidth="158.0" spacing="20.0" style="-fx-background-color: #548687; -fx-background-radius: 10;" />
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="331.0" prefHeight="67.0" prefWidth="422.0">
+         <children>
+            <Button fx:id="addNewGuideButton" mnemonicParsing="false" onAction="#addGuideButtonClicked" prefHeight="41.0" prefWidth="125.0" style="-fx-background-color: F26419; -fx-background-radius: 12; -fx-cursor: hand;" text="ADD  GUIDE" textFill="#ffffc7">
+               <HBox.margin>
+                  <Insets left="10.0" right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="updateGuideButton" mnemonicParsing="false" onAction="#updateGuideButtonClicked" opacity="0.73" prefHeight="41.0" prefWidth="125.0" style="-fx-background-color: #1F271B; -fx-background-radius: 12; -fx-cursor: hand;" text="UPDATE GUIDE" textFill="#ffffc7">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="deleteGuideButton" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="41.0" prefWidth="125.0" style="-fx-background-color: #548687; -fx-background-radius: 12; -fx-cursor: hand; -fx-border-color: #f24d4a; -fx-border-radius: 12;" text="DELETE GUIDE" textFill="#ffffc7">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#548687" height="17.0" layoutX="2.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="598.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000b5" height="5.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="15.0" arcWidth="15.0" fill="#548687" height="22.0" layoutX="436.0" layoutY="87.0" stroke="#ffa100" strokeType="INSIDE" width="158.0" />
+      <Label contentDisplay="CENTER" layoutX="454.0" layoutY="87.0" prefHeight="17.0" prefWidth="122.0" text="Guides in system" textAlignment="CENTER" textFill="#ffffc7">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+            <Button fx:id="clearButton" layoutX="436.0" layoutY="374.0" mnemonicParsing="false" onAction="#clear" opacity="0.9" prefHeight="25.0" prefWidth="158.0" style="-fx-background-color: #548687; -fx-background-radius: 8;" text="Clear Selected" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="72.0" layoutY="11.0" text="Guide Page" textFill="#ffffc7">
+         <font>
+            <Font name="Cooper Black" size="29.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="logoImage" fitHeight="62.0" fitWidth="66.0" layoutX="6.0" layoutY="-6.0">
+         <image>
+            <Image url="@../../../../../../../../../../../../../../Downloads/climbsafe%20(1)%201.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

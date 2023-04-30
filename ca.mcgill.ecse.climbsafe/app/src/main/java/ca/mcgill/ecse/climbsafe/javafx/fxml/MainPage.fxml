@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<TabPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab text="Setup">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <fx:include source="pages/SetupPage.fxml" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Member">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <fx:include source="pages/MemberPage.fxml" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Guide">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <fx:include source="pages/GuidePage.fxml" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Equipment">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <fx:include source="pages/EquipmentPage.fxml" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Bundles">
+         <content>
+            <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="400.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffc7" height="452.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+                  <fx:include maxWidth="1.7976931348623157E308" source="pages/BundlePage.fxml" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Assignments">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <fx:include source="pages/AssignmentsPage.fxml" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Payment">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffc7" height="452.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+                  <fx:include source="pages/PaymentPage.fxml" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Trips">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffc7" height="452.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+                  <fx:include source="pages/TripsPage.fxml" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

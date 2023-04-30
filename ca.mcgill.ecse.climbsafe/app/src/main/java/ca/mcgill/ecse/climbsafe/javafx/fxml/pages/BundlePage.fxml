@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane minHeight="450.0" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.climbsafe.javafx.fxml.controllers.BundlePageController">
+   <children>
+      <GridPane layoutY="85.0" maxWidth="1.7976931348623157E308" prefHeight="315.0" prefWidth="594.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="5.148019313812256" prefWidth="153.90016174316406" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.85198068618774" minWidth="10.0" prefWidth="135.5" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="145.5" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="166.10836791992188" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="67.0" minHeight="0.0" prefHeight="14.655070781707764" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="130.0" minHeight="8.0" prefHeight="26.71520233154297" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="171.0" minHeight="2.7979660034179688" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="164.0" minHeight="0.5959396362304688" prefHeight="29.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="175.0" minHeight="0.0" prefHeight="27.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="161.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="122.338134765625" minHeight="0.7720184326171875" prefHeight="52.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="132.78323364257812" minHeight="10.0" prefHeight="27.37188720703125" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="32.571533203125" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="44.399322509765625" minHeight="0.0" prefHeight="32.928466796875" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="102.0" style="-fx-background-color: #F8B16F#F8B16F; -fx-background-radius: 12;" text="New name: " GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" right="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="newBundleName" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </TextField>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="130.0" style="-fx-background-color: #F8B16F#F8B16F #F8B16F#F8B16F; -fx-background-radius: 12;" text="Discount with guide: " textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" right="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="guideDiscount" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="267.0" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="148.0" style="-fx-background-color: #F8B16F#F8B16F #F8B16F#F8B16F; -fx-background-radius: 12;" text="Equipment for bundle: " GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" right="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="itemQuantity" maxWidth="1.7976931348623157E308" prefHeight="73.0" prefWidth="145.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </TextField>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="108.0" style="-fx-background-color: #F8B16F#F8B16F #F8B16F#F8B16F; -fx-background-radius: 12;" text="Quantity: " textAlignment="RIGHT" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </Label>
+            <ListView fx:id="alreadyAddedItems" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.rowSpan="3">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </ListView>
+            <Button fx:id="addItemButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#addItemToNewBundle" style="-fx-background-radius: 12;" text="Add item" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="160.0" style="-fx-background-color: #548687 #548687; -fx-background-radius: 12;" text="Currently included items: " GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="equipmentToAdd" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </TextField>
+            <Button fx:id="clearItemsButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearBundleItems" style="-fx-background-radius: 12;" text="Clear items" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </Button>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="128.0" style="-fx-background-color: #F8B16F#F8B16F #F8B16F#F8B16F #F8B16F#F8B16F #F8B16F#F8B16F; -fx-background-radius: 12;" text="Bundle to update: " GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" right="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="216.0" style="-fx-background-color: #F8B16F#F8B16F #F8B16F#F8B16F #F8B16F#F8B16F #F8B16F#F8B16F; -fx-background-radius: 12;" text="Equipment to remove: " GridPane.halignment="CENTER" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Hiragino Sans GB W3" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" right="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Button fx:id="removeItemButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#removeItemFromBundle" style="-fx-background-radius: 12;" text="Remove Item" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="updateBundleButton" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#updateBundle" prefHeight="33.0" prefWidth="269.0" style="-fx-background-color: #548687; -fx-background-radius: 12;" text="UPDATE BUNDLE " textFill="#ffffc7" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets left="10.0" right="5.0" />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="deleteBundleButton" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#deleteBundle" prefHeight="95.0" prefWidth="149.0" style="-fx-background-color: #1F271B; -fx-background-radius: 12;" text="DELETE BUNDLE" textFill="#ffffc7" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets left="5.0" right="10.0" />
+               </GridPane.margin>
+            </Button>
+            <ChoiceBox fx:id="bundleChoiceBox" maxWidth="1.7976931348623157E308" onAction="#showItems" prefWidth="150.0" style="-fx-background-radius: 12;" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ChoiceBox>
+            <ChoiceBox fx:id="removeItemChoiceBox" maxWidth="1.7976931348623157E308" prefWidth="150.0" style="-fx-background-radius: 12;" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </ChoiceBox>
+            <Button fx:id="addBundleButton" mnemonicParsing="false" onAction="#addNewBundle" prefHeight="83.0" prefWidth="125.0" style="-fx-background-color: F26419; -fx-background-radius: 12; -fx-cursor: hand;" text="ADD  BUNDLE" textFill="#ffffc7" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+         </children>
+      </GridPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000b5" height="41.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Label layoutX="72.0" layoutY="11.0" text="Equipment Bundle Page" textFill="#ffffc7">
+         <font>
+            <Font name="Cooper Black" size="29.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f26419" height="32.0" layoutX="-2.0" layoutY="50.0" stroke="#ea9a44" strokeType="INSIDE" width="604.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#548687" height="17.0" layoutX="-2.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="602.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000000b5" height="5.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <ImageView fx:id="logoImage" fitHeight="62.0" fitWidth="66.0" layoutX="6.0" layoutY="-6.0">
+         <image>
+            <Image url="@../../../../../../../../../../../../../../Downloads/climbsafe%20(1)%201.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

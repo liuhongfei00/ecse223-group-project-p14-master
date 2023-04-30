@@ -1,0 +1,96 @@
+external interface Serializable {};
+
+class User{
+  	public static void reinitializeUniqueEmail(List<User> users) {
+  	usersByEmail = new HashMap<String, User>();
+  	for (User user : users) {
+  	 usersByEmail.put(user.getEmail(), user);
+  }
+  }
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = -2140476208674413009L;
+}
+
+class ClimbSafe{
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = 5304120051130852278L;
+  	public void reinitialize() { 
+    Hotel.reinitializeUniqueName(this.getHotels()); 
+	
+	List<BookableItem> bitems = new ArrayList<>();
+	bitems.addAll((List<? extends BookableItem>) this.getEquipment());
+	bitems.addAll((List<? extends BookableItem>) this.getBundles());
+	BookableItem.reinitializeUniqueName(bitems);
+	
+	List<User> users = new ArrayList<>();
+	if(this.hasAdministrator()) {
+		users.add((User) this.getAdministrator());
+	}
+	List<? extends User> members = this.getMembers();
+	List<? extends User> guides = this.getGuides();
+	users.addAll(members);
+	users.addAll(guides);
+	User.reinitializeUniqueEmail(users);
+} 	
+}
+class Administrator{
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = 5410200325721153467L;
+}
+class Assignment{
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = 8728735851617678210L;
+}
+class BookableItem{
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = -1940203485636013054L;
+  	public static void reinitializeUniqueName(List<? extends BookableItem> bookableitems) {
+  	bookableitemsByName = new HashMap<String, BookableItem>();
+  	for (BookableItem bookableitem : bookableitems) {
+  	 bookableitemsByName.put(bookableitem.getName(), bookableitem);
+  }
+  }
+}
+
+class Equipment{
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = -6995258554087567478L;
+}
+class EquipmentBundle{
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = 193432438382065775L;
+}
+class Guide{
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = 7109292855380971350L;
+}
+class Hotel{
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = -4984781147919492465L;
+  	public static void reinitializeUniqueName(List<Hotel> hotels) {
+  	hotelsByName = new HashMap<String, Hotel>();
+  	for (Hotel hotel : hotels) {
+  	 hotelsByName.put(hotel.getName(), hotel);
+  }
+}
+  	
+}
+class Member{
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = 30448417316950361L;
+}
+class NamedUser{
+	isA Serializable;
+  	depend java.io.Serializable;
+  	private static final long serialVersionUID = 2848909946175446274L;
+}

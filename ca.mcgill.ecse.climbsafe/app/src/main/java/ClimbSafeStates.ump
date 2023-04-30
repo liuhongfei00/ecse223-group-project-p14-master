@@ -1,0 +1,123 @@
+
+class Assignment {
+  assignmentStatus {
+    Assigned {
+      payForTrip(String authcode)/{setCode(authcode);} -> Paid;
+      cancel() / {refund(0);
+      }
+      -> Cancelled;
+      startTrip() / {
+        banMember(this);
+      } 
+      -> Assigned;
+      endTrip() / {
+        rejectEndTrip("Cannot finish a trip which has not started");
+      }
+      -> Assigned;
+    }
+    
+    Paid {
+      payForTrip(String authcode) / {
+         rejectPayment(authcode, "Trip has already been paid for");
+      }
+      -> Paid;
+      cancel()  / {refund(50);
+      }
+      -> Cancelled;
+      endTrip() / {
+        rejectEndTrip("Cannot finish a trip which has not started");
+      }
+      -> Paid;
+      startTrip() / {
+        doStartTrip();
+      }
+      -> Started;
+    }
+    Started {
+      payForTrip(String authcode) / {
+         rejectPayment(authcode, "Trip has already been paid for");
+      }
+      -> Started;
+      endTrip() / {
+        doEndTrip();
+      } -> Finished;
+      cancel() / {refund(10);
+      }
+       -> Cancelled;
+    }
+    Cancelled {
+      payForTrip(String authcode) / {
+         rejectPayment(authcode, "Cannot pay for a trip which has been cancelled");
+      }
+      -> Cancelled;
+      endTrip() / {
+        rejectEndTrip("Cannot finish a trip which has been cancelled");
+      }
+      -> Cancelled;
+      
+    }
+    Finished {
+      cancel() / {
+        rejectCancelTrip(0, "Cannot cancel a trip which has finished");
+      }
+      -> Cancelled;
+      payForTrip(String authcode) / {
+         rejectPayment(authcode, "Cannot pay for a trip which has finished");
+      }
+      -> Finished;      
+      startTrip() / {
+        rejectStartTrip("Cannot start a trip which has finished");
+      }
+      -> Finished;
+      
+    }
+  }
+  private void setCode(String authcode) throws RuntimeException{
+  	if(authcode==null || authcode.length()==0){
+  		throw new RuntimeException("Invalid authorization code");
+  	}
+  	this.setAuthCode(authcode);
+  }
+  
+  private void rejectPayment(String authCode, String message){
+    throw new RuntimeException(message);
+  }
+  
+   private void rejectEndTrip(String message){
+    throw new RuntimeException(message);
+  }
+  
+  private void rejectStartTrip(String message){
+    throw new RuntimeException(message);
+  }
+  
+  private void rejectCancelTrip(int percentDiscount, String message){
+    refund(percentDiscount);
+    throw new RuntimeException(message);
+  }
+  
+  private void doStartTrip(){}
+  
+  private void doEndTrip(){}
+  
+  private void banMember(Assignment a){
+    this.getMember().banMember();
+
+  }
+  
+  private void refund(int percentDiscount){
+    this.getMember().setRefundPercent(percentDiscount);
+  }
+}
+
+class Member {
+  memberStatus{
+    Active{
+      banMember() -> Banned;
+    }
+    
+    Banned{
+      
+    }
+  }
+}
